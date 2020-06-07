@@ -1,8 +1,8 @@
 [//]: # (Image References)
 [image0]: ./data/failed-lint.PNG "lint failed"
-[image1]: ./data/succesful-lint.PNG "lint succeeds"
+[image1]: ./data/successful-lint.PNG "lint succeeds"
 [image2]: ./data/app.PNG "Streamlit app"
-[image3]: ./data/succesful-deployment.PNG "deployment"
+[image3]: ./data/successful-deployment.PNG "deployment"
 [image4]: ./data/beforeupdate.PNG "before update"
 
 
@@ -61,9 +61,9 @@ Alternatively set up new bastion host based on ubuntu (set VPC, publicsubnet1, I
 Jenkinsfile contains a pipeline that:
 ### Linting stage
 Performs a linting step of the Dockerfile and the python script.
-- todo: screenshot failed linting 
+- screenshot failed linting 
 ![alt text][image0]
-- todo: screenshot succesful linting 
+- screenshot succesful linting 
 ![alt text][image1]
 ### Docker stage
 - build an image from the dockerfile
@@ -72,18 +72,28 @@ Performs a linting step of the Dockerfile and the python script.
 - Runs the image created in the step above
 - Uses loadbalancer.yaml to create service
 
-Screenshots of the deployed application:
+- Screenshots of the deployed application:
+
 ![alt text][image2]
-Screenshot of successful Jenkins pipeline:
+
+- Screenshot of successful Jenkins pipeline:
+
 ![alt text][image3]
-Deployment description before rolling update:
-![alt text][image3]
-Deployment description after rolling update:
+
+- Deployment description before rolling update:
+
+![alt text][image4]
+
+- Deployment description after rolling update:
+
 ![alt text][image7]
 
-Jenkins pipeline for rolling update:
+- Jenkins pipeline for rolling update:
+
 ![alt text][image6]
-Updated application:
+
+- Updated application:
+
 ![alt text][image5]
 
 
