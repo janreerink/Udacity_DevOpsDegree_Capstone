@@ -21,11 +21,9 @@ The Quickstart Template provisions one EC2 instance as bastion host to the EKS c
 ### Configure Jenkins
 - Navigate to port 8080 on EC2 instance
 - Use `sudo cat /var/lib/jenkins/secrets/initialAdminPassword` to retrieve install pwd, create new admin
-- Install suggested plugins, then manually add Blue Ocean Aggregator and pipeline-aws
-
-### Link github project in Jenkins, add credentials
-- Connect git to jenkins (preferably using github access token) to build pipeline. Change pipeline to check repo for changes every 2 minutes.
-- In Jenkins credentials menu add dockerhub credentials for pipeline
+- Install suggested plugins, then manually add Blue Ocean Aggregator
+- Connect git to jenkins (using github access token) to build pipeline. Change pipeline to check repo for changes every 2 minutes.
+- In Jenkins credentials menu add dockerhub credentials for pipeline; also add to pipeline configuration
 
 ## Install hadolint
 - `wget https://github.com/hadolint/hadolint/releases/download/v1.18.0/hadolint-Linux-x86_64`
@@ -48,12 +46,16 @@ Alternatively set up new bastion host based on ubuntu (set VPC, publicsubnet1, I
 
 ## Use jenkins pipeline to deploy
 Jenkinsfile contains a pipeline that:
-- performs a linting step of the Dockerfile and the python script.
-    - todo: screenshot failed linting
-    - todo: screenshot succesful linting
-- builds an image and pushes it to dockerhub
-- runs the docker image on the eks cluster
-    - to do: screenshot succesful pipeline run
+### Linting stage
+Performs a linting step of the Dockerfile and the python script.
+- todo: screenshot failed linting
+- todo: screenshot succesful linting
+### Docker stage
+- build an image from the dockerfile
+- pushes the image to the public docker repo
+### Deploy stage
+- Runs the image created in the step above
+- Uses loadbalancer.yaml to create service
 
 
 
