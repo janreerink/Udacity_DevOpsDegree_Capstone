@@ -1,8 +1,15 @@
 [//]: # (Image References)
-[image0]: ./data/failed-lint.png "lint failed"
-[image1]: ./data/succesful-lint.png "lint succeeds"
-[image2]: ./data/app.png "Streamlit app"
-[image3]: ./data/succesful-deployment.png "deployment"
+[image0]: ./data/failed-lint.PNG "lint failed"
+[image1]: ./data/succesful-lint.PNG "lint succeeds"
+[image2]: ./data/app.PNG "Streamlit app"
+[image3]: ./data/succesful-deployment.PNG "deployment"
+[image4]: ./data/beforeupdate.PNG "before update"
+
+
+[image5]: ./data/app-rolling.PNG "after rolling deployment"
+[image6]: ./data/deploy-rolling.PNG "after rolling deployment"
+[image7]: ./data/afterupdate.PNG "after update"
+
 
 # Udacity_DevOpsDegree_Capstone
 Final project for the Udacity DevOps Nanodegree. 
@@ -67,7 +74,16 @@ Performs a linting step of the Dockerfile and the python script.
 
 Screenshots of the deployed application:
 ![alt text][image2]
+Screenshot of successful Jenkins pipeline:
 ![alt text][image3]
+Deployment description before rolling update:
+![alt text][image3]
+Deployment description after rolling update:
+![alt text][image7]
 
+Jenkins pipeline for rolling update:
+![alt text][image6]
+Updated application:
+![alt text][image5]
 
 
