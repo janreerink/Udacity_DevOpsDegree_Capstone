@@ -15,7 +15,7 @@ pipeline {
                 script {
                     def customImage = docker.build("jansdockerhub/streamlit-test:${env.BUILD_ID}")
                     withDockerRegistry([ credentialsId: "jenkinscred", url: "" ]) {
-                        customImage.push()
+                        customImage.push('latest')
                     }
                 }
             }
@@ -28,7 +28,7 @@ pipeline {
                 //sh '/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf  expose deployment/mlapp --type=LoadBalancer --port=8501'
                 
                 //rolling update:
-                sh '/usr/bin/kubectl set image deployments/mlapp mlapp=jansdockerhub/streamlit-test:${env.BUILD_ID}'
+                sh '/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf set image deployments/mlapp mlapp=jansdockerhub/streamlit-test:latest'
                 //kubectl get service/strlit-service |  awk {'print $1" " $2 " " $4 " " $5'} | column -t
             }
         }
