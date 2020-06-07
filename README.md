@@ -1,3 +1,9 @@
+[//]: # (Image References)
+[image0]: ./data/failed-lint.png "lint failed"
+[image1]: ./data/succesful-lint.png "lint succeeds"
+[image2]: ./data/app.png "Streamlit app"
+[image3]: ./data/succesful-deployment.png "deployment"
+
 # Udacity_DevOpsDegree_Capstone
 Final project for the Udacity DevOps Nanodegree. 
 
@@ -48,8 +54,10 @@ Alternatively set up new bastion host based on ubuntu (set VPC, publicsubnet1, I
 Jenkinsfile contains a pipeline that:
 ### Linting stage
 Performs a linting step of the Dockerfile and the python script.
-- todo: screenshot failed linting
-- todo: screenshot succesful linting
+- todo: screenshot failed linting 
+![alt text][image0]
+- todo: screenshot succesful linting 
+![alt text][image1]
 ### Docker stage
 - build an image from the dockerfile
 - pushes the image to the public docker repo
@@ -57,6 +65,9 @@ Performs a linting step of the Dockerfile and the python script.
 - Runs the image created in the step above
 - Uses loadbalancer.yaml to create service
 
+Screenshots of the deployed application:
+![alt text][image2]
+![alt text][image3]
 
 
 

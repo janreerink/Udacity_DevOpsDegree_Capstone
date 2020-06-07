@@ -23,8 +23,10 @@ pipeline {
 
         stage('Deploy image') {
             steps {
-                sh "/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf run streaml --labels='app=streamlit-test' --image=jansdockerhub/streamlit-test:${env.BUILD_ID} --port=8501"
+                //sh "/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf run streaml --labels='app=streamlit-test' --image=jansdockerhub/streamlit-test:${env.BUILD_ID} --port=8501"
+                sh "/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf create deployment streaml --labels='app=streamlit-test' --image=jansdockerhub/streamlit-test:${env.BUILD_ID} --port=8501"
                 sh '/usr/bin/kubectl --kubeconfig=/kubecfg/test.conf create -f loadbalancer.yaml'
+                //kubectl set image deployments/depname depname=jansdockerhub/streamlit-test:v2
                 //kubectl get service/strlit-service |  awk {'print $1" " $2 " " $4 " " $5'} | column -t
             }
         }
