@@ -12,7 +12,7 @@ COPY . app.py /workd/
 # hadolint ignore=DL3013
 #RUN pip install --upgrade pip &&\
 #    pip install --trusted-host pypi.python.org -r requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 ## Step 4:
 # Expose port 8501
